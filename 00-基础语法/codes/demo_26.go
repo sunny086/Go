@@ -17,10 +17,10 @@ func main() {
 
 	fmt.Printf("current time unix : %d\n", getTimeInt())
 
-	params := map[string]interface{} {
-		"name" : "Tom",
-		"pwd"  : "123456",
-		"age"  : 30,
+	params := map[string]interface{}{
+		"name": "Tom",
+		"pwd":  "123456",
+		"age":  30,
 	}
 	fmt.Printf("sign : %s\n", createSign(params))
 }
@@ -33,12 +33,12 @@ func MD5(str string) string {
 }
 
 // 获取当前时间字符串
-func getTimeStr() string {
+func getTimeStr1() string {
 	return time.Now().Format("2006-01-02 15:04:05")
 }
 
 // 获取当前时间戳
-func getTimeInt() int64 {
+func getTimeInt1() int64 {
 	return time.Now().Unix()
 }
 
@@ -47,7 +47,7 @@ func createSign(params map[string]interface{}) string {
 	var key []string
 	var str = ""
 	for k := range params {
-		key   = append(key, k)
+		key = append(key, k)
 	}
 	sort.Strings(key)
 	for i := 0; i < len(key); i++ {

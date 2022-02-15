@@ -29,22 +29,22 @@ type Employee struct {
 	money   float32
 }
 
-// Human对象实现SayHi()方法
+// SayHi Human对象实现SayHi()方法
 func (h Human) SayHi() {
 	fmt.Printf("Hi, I am %s, you can call me on %s\n", h.name, h.phone)
 }
 
-// Human对象实现Sing()方法
+// Sing Human对象实现Sing()方法
 func (h Human) Sing(lyrics string) {
 	fmt.Println("La la la...", lyrics)
 }
 
-// Human对象实现Guzzle()方法
+// Guzzle Human对象实现Guzzle()方法
 func (h Human) Guzzle(beerStein string) {
 	fmt.Println("Guzzle Guzzle Guzzle...", beerStein)
 }
 
-// Employee对象重写SayHi()方法
+// SayHi Employee对象重写SayHi()方法
 func (e Employee) SayHi() {
 	fmt.Printf("Hi I am %s, I work at %s. Call me on %s\n", e.name, e.company, e.phone)
 }
@@ -54,12 +54,12 @@ func (s Student) BorrowMoney(amount float32) {
 	s.loan += amount
 }
 
-// Employee对象实现SpendSalary()方法
+// SpendSalary Employee对象实现SpendSalary()方法
 func (e Employee) SpendSalary(amount float32) {
 	e.money -= amount
 }
 
-// 定义interface，interface是一组method签名的组合
+// Men 定义interface，interface是一组method签名的组合
 // interface可以被任意对象实现，一个对象也可以实现多个interface
 // 任意类型都实现了空interface（也就是包含0个method的interface）
 // 空interface可以存储任意类型的值
@@ -71,14 +71,14 @@ type Men interface {
 	Guzzle(beerStein string)
 }
 
-// interface YoungChap的BorrowMoney() method只被Student对象实现，也就是只有Student实现了YoungChap
+// YoungChap interface YoungChap的BorrowMoney() method只被Student对象实现，也就是只有Student实现了YoungChap
 type YoungChap interface {
 	SayHi()
 	Sing(song string)
 	BorrowMoney(amount float32)
 }
 
-// interface ElderlyGent的SpendSalary() method只被Employee对象实现，也就是只有Employee实现了ElderlyGent
+// ElderlyGent interface ElderlyGent的SpendSalary() method只被Employee对象实现，也就是只有Employee实现了ElderlyGent
 type ElderlyGent interface {
 	SayHi()
 	Sing(song string)
